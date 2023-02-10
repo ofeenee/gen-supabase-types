@@ -1,0 +1,17 @@
+{
+  "name": "@ofeenee/gen-supabase-types",
+  "version": "0.0.1",
+  "description": "runs the official supabase-cli command to generate database types for typescript.",
+  "repository": {
+    "url": "git://github.com/ofeenee/gen-supabase-types.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha || true"
+  },
+  "bin": {
+    "execute": "index.js"
+  },
+  "author": "ofeenee <ofeenee@gmail.com>",
+  "license": "MIT"
+}
