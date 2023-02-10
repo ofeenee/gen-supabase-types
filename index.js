@@ -7,16 +7,17 @@ dotenv.config();
 // console.log(process.env);
 
 const [first, second, third, forth, fifth] = process.argv;
-
 console.log({ first, second, third, forth, fifth });
-// console.log(`Database URL variable name: ${DatabaseURLVariableName}`);
 
-// const DatabaseURL = process.env[DatabaseURLVariableName || 'SUPABASE_DATABASE_URL'];
-// if (!DatabaseURL) {
-//   console.error(`Database URL not found in environment variable ${DatabaseURLVariableName}`);
-//   process.exit(1);
-// }
+const DatabaseURLVariableName = third;
+const DatabaseURL = third === '--db-url' ? forth : process.env[DatabaseURLVariableName || 'SUPABASE_DATABASE_URL'];
+// console.log(`Database URL variable name: ${DatabaseURL}`);
 
-// execSync(`supabase gen types typescript --db-url ${DatabaseURL} > ./supabase.types.ts --debug`, {
-//   stdio: 'inherit',
-// });
+if (!DatabaseURL) {
+  console.error(`Database URL not found in environment variable ${DatabaseURLVariableName}`);
+  process.exit(1);
+}
+
+execSync(`supabase gen types typescript --db-url ${DatabaseURL} > ./supabase.types.ts --debug`, {
+  stdio: 'inherit',
+});
