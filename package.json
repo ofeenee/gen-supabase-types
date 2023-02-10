@@ -6,12 +6,17 @@
     "url": "git://github.com/ofeenee/gen-supabase-types.git"
   },
   "main": "index.js",
+  "type": "module",
   "scripts": {
+    "start": "node index.js",
     "test": "mocha || true"
   },
   "bin": {
-    "execute": "index.js"
+    "sb": "index.js"
   },
   "author": "ofeenee <ofeenee@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.3"
+  }
 }
