@@ -7,7 +7,7 @@ dotenv.config();
 // console.log(process.env);
 
 const [first, second, third, forth, fifth] = process.argv;
-console.log({ first, second, third, forth, fifth });
+// console.log({ first, second, third, forth, fifth });
 
 const DatabaseURLVariableName = third;
 const DatabaseURL = third === '--db-url' ? forth : process.env[DatabaseURLVariableName || 'SUPABASE_DATABASE_URL'];
