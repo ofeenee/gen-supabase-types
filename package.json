@@ -12,7 +12,7 @@
     "test": "mocha || true"
   },
   "bin": {
-    "sb": "index.js"
+    "gen-supabase-types": "index.js"
   },
   "author": "ofeenee <ofeenee@gmail.com>",
   "license": "MIT",
